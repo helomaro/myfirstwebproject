@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="utf-8" >
-    <title>change html style</title>
+    <title>change html style using variables </title>
     <style>
         .bluebox{
             background-color: #3A5795;
@@ -40,17 +40,22 @@
     <button id="button1"> Change facebook style.</button>
     <button id="button2"> Change apple style.</button>
     <script>
-    document.getElementById("button1").onclick=function(){
-    document.getElementById("facebook").style.width='200px';
-    document.getElementById("facebook").style.backgroundColor='rgba(26,203,135, 0.922)'
-    
-    }
-    document.getElementById("button2").ondblclick= function(){ 
-        document.getElementById("apple").style.fontFamily='monospace';       
+        var color = 'rgb(18, 149, 68)';
+        document.getElementById("button1").onclick = function(){
+            document.getElementById("facebook").style.backgroundColor = color;
+        }
         
-         document.getElementById("apple").style.fontSize='3em';   
-                  
-                  }
+        var x, y, z, appleColor;
+        document.getElementById("button2").onclick = function(){
+        x = Math.round(Math.random()*256);
+        y = Math.round(Math.random()*256);
+        z = Math.round(Math.random()*256);
+        appleColor = 'rgb(' + x + ', ' + y + ', ' + z + ')';
+        document.getElementById("apple").style.backgroundColor = appleColor;
+        }
+
+        window.console.log("the value of y is: " + y);
+        
     </script>
 </body>
     

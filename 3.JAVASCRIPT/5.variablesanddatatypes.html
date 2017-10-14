@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="utf-8" >
-    <title>change html style</title>
+    <title>variables and data types</title>
     <style>
         .bluebox{
             background-color: #3A5795;
@@ -40,17 +40,27 @@
     <button id="button1"> Change facebook style.</button>
     <button id="button2"> Change apple style.</button>
     <script>
-    document.getElementById("button1").onclick=function(){
-    document.getElementById("facebook").style.width='200px';
-    document.getElementById("facebook").style.backgroundColor='rgba(26,203,135, 0.922)'
-    
-    }
-    document.getElementById("button2").ondblclick= function(){ 
-        document.getElementById("apple").style.fontFamily='monospace';       
-        
-         document.getElementById("apple").style.fontSize='3em';   
-                  
-                  }
+   var x = 3;
+   window.console.log(x);
+   var y;
+   y = 5;
+   var z;
+   window.console.log("the value of z is " + z);
+   z = x + y;
+    window.console.log("the type of z is: " + typeof(z));
+   z = x + " " + y;
+   window.console.log("the value of z is " + z);
+      window.console.log("the type of z is: " + typeof(z));
+    var greeting = "hello";
+    var firstname = "John";
+    var message = greeting + " " + firstname;
+    window.console.log("the value of message is:  " + message);
+    window.console.log("the type of message is:  " + typeof(message));
+    var check = (x==3);
+    window.console.log("the value of check is: " + check);
+    var myArray = [1,2,3];
+    window.console.log(myArray);
+    window.console.log(typeof(myArray));
     </script>
 </body>
     
