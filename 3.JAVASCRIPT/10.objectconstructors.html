@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Object constructors</title>
+            <body>
+                <p>
+                Javascript.
+                </p>
+                <script>
+                    function phone(make, model, warranty, color){
+                        this.make = make;
+                        this.model = model;
+                        this.warranty = warranty;
+                        this.color = color;
+                        this.extendWarranty = function(x) {
+                            this.warranty += x;
+                        }
+                    }
+                    
+                    var myPhone = new phone("Apple", "Iphone 5", 12, "white");
+                    
+                    window.console.log(myPhone);
+                    myPhone.extendWarranty(12);
+                    window.console.log(myPhone.warranty);
+                    //Aqui estou dizendo que apenas o myPhone terá um novo atributo chamado condition. Ou seja, mesmo que depois eu faça o prototype.condition = "new", o que prevalece pra esse objeto é o que fizemos aqui embaixo é o que declaramos pra ele sozinho
+                    myPhone.condition = "like new";
+                    window.console.log(myPhone);                   
+                    window.console.log(myPhone.condition);
+                
+                
+                    var myBrothersPhone = new phone("Apple", "Iphone 4", 6, "black");
+                    window.console.log(myBrothersPhone);
+                    window.console.log(myBrothersPhone.condition);
+                    
+                    phone.prototype.condition = "new";
+                   window.console.log("myBrothersPhone condition: " + myBrothersPhone.condition);
+                    
+                    
+                    phone.prototype.portKind = "universal";
+                    
+                    //engraçado que ele nao adiciona o atributo aos objetos (como mostra no display abaixo), mas se dermos o display como objeto.portKind o valor está armazenado. Veja o próximo display
+                    window.console.log("Both objects after prototype")
+                    window.console.log(myPhone);
+                    window.console.log(myBrothersPhone);
+                   
+                    //O que o prototype faz é: adiciona determinado atributo para todos os objetos que são "daquele" tipo.
+                    window.console.log(myPhone.portKind);
+                    window.console.log(myBrothersPhone.portKind);
+                
+                    
+                
+                
+                
+                </script>    
+            </body>
+        
+    </head>
+
+</html>
