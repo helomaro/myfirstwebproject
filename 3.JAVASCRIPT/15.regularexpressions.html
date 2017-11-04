@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Regular Expression</title>    
+</head>
+<body>
+
+<p>String: <span id="string"></span></p>
+<p>Pattern: <span id="pattern"></span></p>
+<p>Result(search): <span id="search"></span></p>
+<p>Result(match): <span id="match"></span></p>
+<p>Result(test): <span id="test"></span></p>
+    
+    <script>
+    var str= "Atlanta578375%";
+    var pattern = /^A/g;
+        
+/*    var pattern = /\n/g; - searcher for linebreaker - nao precisou escapar a backslash*/
+/*    var pattern = /^A/g; - searches for capital A for the first character */
+/*var pattern = /\d{4}/g; - searches for 4 consequent digits*/
+/*var pattern - /\s/g; - searches for space  */      
+/*var pattern = /\W/g; - searches for nonAlphanumerics*/
+/*var pattern = /\w/g; - searches for alphanumerics*/
+/*    var pattern = /[4-7]/g; - search for numbers from 4 to 7*/
+/*    var pattern = /[^atn]/g; - search for letters which are not a, t, n so it shows up A and l*/
+/*    var pattern = new RegExp("a", "g");*/
+    document.getElementById("string").innerHTML = str;
+    document.getElementById("pattern").innerHTML = pattern;
+    document.getElementById("search").innerHTML = str.search(pattern);
+    document.getElementById("match").innerHTML = str.match(pattern);
+    document.getElementById("test").innerHTML = pattern.test(str);
+    
+    </script>
+    
+</body>
+</html>
